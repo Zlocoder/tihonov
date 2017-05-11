@@ -1,0 +1,44 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+AddDefaultCharset CP1251
+
+# Основной домен
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Главная
+RewriteRule ^index.html$ index.php [L]
+
+# Правила
+
+RewriteRule ^rules(/?)+$ index.php?menu=rules [L]
+RewriteRule ^competition(/?)+$ index.php?menu=competition [L]
+RewriteRule ^faq(/?)+$ index.php?menu=faq [L]
+RewriteRule ^news(/?)+$ index.php?menu=news [L]
+RewriteRule ^about(/?)+$ index.php?menu=about [L]
+RewriteRule ^signup(/?)+$ index.php?menu=signup [L]
+RewriteRule ^recovery(/?)+$ index.php?menu=recovery [L]
+RewriteRule ^support(/?)+$ index.php?menu=support [L]
+
+
+#Аккаунт
+# YandexMoney
+RewriteRule ^account/insertyd(/?)+$ index.php?menu=account&sel=insertyd [L]
+RewriteRule ^account/baners(/?)+$ index.php?menu=account&sel=baners [L]
+RewriteRule ^account/magazin(/?)+$ index.php?menu=account&sel=magazin [L]
+RewriteRule ^account/bonus(/?)+$ index.php?menu=account&sel=bonus [L]
+RewriteRule ^account/config(/?)+$ index.php?menu=account&sel=config [L]
+RewriteRule ^account/insertpayeer(/?)+$ index.php?menu=account&sel=insertpayeer [L]
+RewriteRule ^account/payment(/?)+$ index.php?menu=account&sel=payment [L]
+RewriteRule ^account/swap(/?)+$ index.php?menu=account&sel=swap [L]
+RewriteRule ^account/swap2(/?)+$ index.php?menu=account&sel=swap2 [L]
+RewriteRule ^account/store(/?)+$ index.php?menu=account&sel=store [L]
+RewriteRule ^account/donations(/?)+$ index.php?menu=account&sel=donations [L]
+RewriteRule ^account/referals(/?)+$ index.php?menu=account&sel=referals [L]
+RewriteRule ^account/farm(/?)+$ index.php?menu=account&sel=farm [L]
+RewriteRule ^account/items(/?)+$ index.php?menu=account&sel=items [L]
+
+
+RewriteRule ^account/exit(/?)+$ index.php?menu=account&sel=exit [L]
+RewriteRule ^account(/?)+$ index.php?menu=account [L]
